@@ -1,0 +1,145 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: rgb(255, 255, 255);
+  color: #0b1220;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(11,18,32,0.06);
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #dbe6f0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+button {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+button:focus,
+input:focus { outline: 3px solid rgba(37,99,235,0.15); }
+
+ul { list-style: none; padding: 0; margin: 1rem 0 0 0; }
+
+li.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.todo-item span { word-break: break-word; }
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-weight: 650;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.delete-btn:hover { background: rgba(227, 53, 53, 0.166); }
+
+.empty { color: #64748b; margin-top: 1rem; }
+
+.visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+footer.credits { margin-top: 1.2rem; color: #94a3b8; font-size: 0.9rem; }
+
+/* Responsive tweaks */
+:root {
+  --container-max-width: 640px;
+}
+
+/* Make layout fluid on smaller screens */
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+  }
+
+  button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  ul { margin-top: 0.75rem; }
+
+  li.todo-item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .delete-btn {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 { font-size: 1.1rem; }
+
+  li.todo-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .todo-item span { display: block; }
+
+  .delete-btn { align-self: flex-end; }
+}
